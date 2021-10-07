@@ -38,7 +38,7 @@ var app = (function () {
             console.log('Connected: ' + frame);
             stompClient.subscribe('/topic/newpoint', function (eventbody) {
                 var theObject=JSON.parse(eventbody.body);
-                alert("X: "+theObject.x+", Y: "+theObject.y);
+                addPointToCanvas(theObject);
             });
         });
 
